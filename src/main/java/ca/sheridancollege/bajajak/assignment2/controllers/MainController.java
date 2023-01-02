@@ -32,7 +32,7 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping({"/cheese"})   //to request list_inventory page (view cheese inventory ) as per project assignment
+    @RequestMapping({"/cheese"})   //to request list_inventory page (View Chez ) as per project assignment
     public String showCheeses() {
         return "list_inventory";
     }
