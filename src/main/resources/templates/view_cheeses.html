@@ -1,0 +1,56 @@
+<!--
+Name:  Akshita bajaj
+Assignment:  Assignment2
+Date:  nov 4 2022
+
+Description: cheese inventory java enterprise application
+
+-->
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>View Our Cheeses</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/main.css" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+
+<header>
+    <h1>Sydney's Cheesey Cheese</h1>
+    <h2>View Our Cheeses</h2>
+</header>
+
+<main>
+    <nav>
+        <!--// links to all the pages on my website-->
+        <a href="/" th:href="@{/}">Home</a>
+
+        <a href="/add_inventory" th:href="@{/add_inventory}">Add Cheese Inventory</a>
+
+        <a href="/listInventory" th:href="@{/listInventory}">View Cheese Inventory</a>
+
+        <a href="/view" th:href="@{/view_cheeses}">View Our Cheeses</a>
+
+        <a href="#">About Us</a>
+    </nav>
+    <section>
+<div class="myclass" th:unless="${#lists.isEmpty(allCheeses)}">
+
+
+    <ul th:each="cheese : ${cheeseList}">
+         <li>
+            ${cheese}
+         </li>
+     </ul>
+
+</div>
+    </section>
+</main>
+<footer>
+    <address>&copy; 2022 Akshita Bajaj</address>
+</footer>
+</body>
+</html>

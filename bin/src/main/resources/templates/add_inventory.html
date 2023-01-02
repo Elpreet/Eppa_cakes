@@ -1,0 +1,107 @@
+<!--
+Name:  Akshita bajaj
+Assignment:  Assignment2
+Date:  nov 4 2022
+
+Description: cheese inventory java enterprise application
+
+-->
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add Cheese Inventory</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--//linking css to this html page-->
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/forms.css" th:href="@{/css/forms.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/main.css" th:href="@{/css/main.css}"/>
+</head>
+
+<body>
+<header>
+    <h1>Sydney's Cheesey Cheese</h1>
+    <h2>Add Cheese Inventory</h2>
+</header>
+
+<main>
+    <nav>
+        <!--// links to all the pages on my website-->
+
+        <a href="/" th:href="@{/}">Home</a>
+
+        <a href="/listInventory" th:href="@{/listInventory}">View Cheese Inventory</a>
+
+        <a href="/view" th:href="@{/view_cheeses}">View Our Cheeses</a>
+
+        <a href="#">About Us</a>
+    </nav>
+    <section>
+        <!--   // form starts here
+            // added functionality with form binding-->
+
+
+        <form action="#" th:action="@{/saveCheese}" th:object="${cheese}" method="post">
+
+            <h1>Add Cheese to Inventory</h1>
+
+            <div> <!--// for label cheese name-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.name}">cheeseName: </span>
+                </label>
+                <input type="text" th:field="*{name}" th:errorclass="fieldError"/>
+            </div>
+
+            <div><!--// for label quantity-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.quantity}">quantity: </span>
+                </label>
+                <input type="text" th:field="*{quantity}" th:errorclass="fieldError"/>
+            </div>
+
+            <div><!--// for label weight-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.weight}">Weight: </span>
+                </label>
+                <input type="text" th:field="*{weight}" th:errorclass="fieldError"/>
+            </div>
+
+            <div><!--// for label units id-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.units}">cheeseName: </span>
+                </label>
+                <input type="text" th:field="*{unitsId}" th:errorclass="fieldError"/>
+            </div>
+
+            <div><!--// for label price-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.price}">price: </span>
+                </label>
+                <input type="text" th:field="*{price}" th:errorclass="fieldError"/>
+            </div>
+
+            <div> <!--// for label specSheetURl-->
+                <label for="cheese name">
+                    <span th:text="#{addinventory.specSheet}">cheeseName: </span>
+                </label>
+                <input type="text" th:field="*{specSheet}" th:errorclass="fieldError"/>
+            </div>
+
+
+            <div class="Submit"> <!--// submit button-->
+                <button type="submit" name="save" th:text="#{addinventory.submit}">Submit Button</button>
+            </div>
+
+            <div class="Reset">
+                <button type="submit" name="save" th:text="#{addinventory.reset}">Reset Button</button>
+            </div>
+        </form>
+    </section>
+</main>
+<footer>
+    <address>&copy; 2022 Akshita Bajaj</address>
+</footer>
+
+</body>
+</html>
